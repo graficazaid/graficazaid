@@ -6,28 +6,29 @@
     <title>Gráfica Zaid | Soluções Gráficas e Comunicação Visual em Itapevi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-deep: #0a0a0a;
-            --surface-card: #141414;
-            --surface-hover: #1f1f1f;
-            --border-color: #262626;
-            --gold-primary: #dfb15b;
-            --gold-hover: #f0c36d;
+            --bg-deep: #0b0710;
+            --surface-card: #15101a;
+            --surface-hover: #22182c;
+            --border-color: #352542;
+            --pink-primary: #ff007f;
+            --pink-hover: #ff3399;
+            --magenta-accent: #e60073;
             --text-main: #ffffff;
-            --text-muted: #a3a3a3;
+            --text-muted: #d1c7dc;
             --whatsapp-green: #25d366;
             --call-blue: #3b82f6;
             --transition: all 0.3s ease;
         }
 
-        * {
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -41,9 +42,9 @@
 
         /* Top Bar */
         .top-bar {
-            background: #000;
+            background: #050308;
             border-bottom: 1px solid var(--border-color);
-            padding: 8px 5%;
+            padding: 10px 5%;
             font-size: 13px;
             color: var(--text-muted);
             display: flex;
@@ -54,9 +55,9 @@
         }
 
         .top-bar a {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .top-bar .contact-links {
@@ -67,13 +68,13 @@
 
         /* Header / Navbar */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 7, 16, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 15px 5%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -82,31 +83,33 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             text-decoration: none;
         }
 
         .logo-container img {
-            height: 48px;
+            height: 65px;
             width: auto;
             object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.4));
         }
 
         .logo-text {
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 900;
             color: var(--text-main);
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .logo-text span {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
             align-items: center;
         }
 
@@ -114,37 +117,39 @@
             color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
             transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         nav ul li a:hover, nav ul li a.active {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
         }
 
         .btn-cta {
-            background: var(--gold-primary);
-            color: #000;
-            padding: 10px 22px;
-            border-radius: 4px;
-            font-weight: 700;
+            background: var(--pink-primary);
+            color: #ffffff;
+            padding: 12px 26px;
+            border-radius: 6px;
+            font-weight: 800;
             text-decoration: none;
             transition: var(--transition);
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
         }
 
         .btn-cta:hover {
-            background: var(--gold-hover);
+            background: var(--pink-hover);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
         }
 
         /* Hero Section */
         .hero {
-            padding: 90px 5%;
-            background: linear-gradient(135deg, #0a0a0a 0%, #171717 100%);
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #0b0710 0%, #1f1128 100%);
             border-bottom: 1px solid var(--border-color);
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -153,21 +158,21 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(32px, 4vw, 52px);
+            font-size: clamp(34px, 4.5vw, 56px);
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
         .hero-content h1 span {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
         }
 
         .hero-content p {
-            font-size: 16px;
+            font-size: 17px;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             max-width: 600px;
         }
 
@@ -180,14 +185,14 @@
         .btn-call {
             border: 2px solid var(--call-blue);
             color: #fff;
-            background: rgba(59, 130, 246, 0.1);
-            padding: 10px 22px;
-            border-radius: 4px;
-            font-weight: 600;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 12px 26px;
+            border-radius: 6px;
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition);
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 14px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -201,42 +206,42 @@
         /* Highlights Bar */
         .highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 5%;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 50px 5%;
             background: var(--surface-card);
             border-bottom: 1px solid var(--border-color);
         }
 
         .highlight-item {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             align-items: flex-start;
         }
 
         .highlight-item h3 {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
 
         .highlight-item p {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
         }
 
         .highlight-icon {
-            font-size: 24px;
-            color: var(--gold-primary);
-            background: rgba(223, 177, 91, 0.1);
-            padding: 12px;
-            border-radius: 8px;
+            font-size: 26px;
+            color: var(--pink-primary);
+            background: rgba(255, 0, 127, 0.12);
+            padding: 14px;
+            border-radius: 10px;
         }
 
         /* Products Grid */
         .section {
-            padding: 80px 5%;
+            padding: 90px 5%;
         }
 
         .section-title {
@@ -245,29 +250,29 @@
         }
 
         .section-title h2 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 10px;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .section-title p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .product-card {
             background: var(--surface-card);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
+            border-radius: 10px;
+            padding: 35px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -275,34 +280,39 @@
         }
 
         .product-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-5px);
+            border-color: var(--pink-primary);
+            transform: translateY(-6px);
             background: var(--surface-hover);
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.15);
         }
 
         .product-card h3 {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 800;
             margin-bottom: 15px;
             color: var(--text-main);
         }
 
         .product-card p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 25px;
         }
 
         .product-link {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 800;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
+        }
+
+        .product-link:hover {
+            color: var(--pink-hover);
         }
 
         /* Budget / Form Section */
@@ -310,26 +320,27 @@
             background: var(--surface-card);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            padding: 80px 5%;
+            padding: 90px 5%;
         }
 
         .budget-container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             background: var(--bg-deep);
             border: 1px solid var(--border-color);
-            padding: 40px;
-            border-radius: 12px;
+            padding: 45px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
             display: block;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -338,58 +349,62 @@
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 18px;
             background: var(--surface-card);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             color: var(--text-main);
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--gold-primary);
+            border-color: var(--pink-primary);
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
         }
 
         textarea.form-control {
             resize: vertical;
-            height: 120px;
+            height: 130px;
         }
 
         .btn-submit {
             width: 100%;
-            background: var(--gold-primary);
-            color: #000;
+            background: var(--pink-primary);
+            color: #ffffff;
             border: none;
-            padding: 14px;
-            font-weight: 800;
-            font-size: 14px;
+            padding: 16px;
+            font-weight: 900;
+            font-size: 15px;
             text-transform: uppercase;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
             letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
         }
 
         .btn-submit:hover {
-            background: var(--gold-hover);
+            background: var(--pink-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
         }
 
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 35px;
+            right: 35px;
             background: var(--whatsapp-green);
             color: #fff;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
             z-index: 999;
             text-decoration: none;
             transition: var(--transition);
@@ -401,35 +416,35 @@
 
         /* Footer */
         footer {
-            background: #050505;
-            padding: 40px 5%;
+            background: #050308;
+            padding: 50px 5%;
             text-align: center;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 14px;
             border-top: 1px solid var(--border-color);
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         footer span {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
         }
 
         .footer-dev {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #737373;
+            margin-top: 18px;
+            font-size: 13px;
+            color: #a395b0;
             letter-spacing: 0.5px;
         }
 
         .footer-dev a {
             color: #fff;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .footer-dev a:hover {
-            color: var(--gold-primary);
+            color: var(--pink-primary);
             text-decoration: underline;
         }
 
@@ -437,7 +452,7 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 50px 5%;
+                padding: 60px 5%;
             }
             .hero-buttons {
                 justify-content: center;
@@ -464,7 +479,7 @@
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Gráfica Zaid Logo">
-            <div class="logo-text">ZAID <span>GRÁFICA</span></div>
+            <div class="logo-text">GRÁFICA <span>ZAID</span></div>
         </a>
         <nav>
             <ul>
@@ -487,13 +502,13 @@
                 <a href="tel:5511973722035" class="btn-call">📞 Ligar Agora</a>
             </div>
         </div>
-        <div style="background: var(--surface-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; text-align: center;">
-            <h3 style="color: var(--gold-primary); font-size: 22px; margin-bottom: 15px;">Fale Conosco</h3>
-            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 10px;"><strong>Endereço:</strong> Rua dos Cariocas, 982 - Itapevi - SP</p>
-            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Prefere conversar por ligação ou mensagem? Escolha abaixo:</p>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <div style="background: var(--surface-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 45px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <h3 style="color: var(--pink-primary); font-size: 24px; margin-bottom: 15px; font-weight: 800;">Fale Conosco</h3>
+            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 12px;"><strong>Endereço:</strong> Rua dos Cariocas, 982 - Itapevi - SP</p>
+            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 25px;">Prefere conversar por ligação ou mensagem? Escolha abaixo:</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                 <a href="tel:5511973722035" class="btn-call">Ligar (11) 97372-2035</a>
-                <a href="https://wa.me/5511973722035" target="_blank" class="btn-cta" style="background: var(--whatsapp-green); color: #fff;">WhatsApp</a>
+                <a href="https://wa.me/5511973722035" target="_blank" class="btn-cta" style="background: var(--whatsapp-green);">WhatsApp</a>
             </div>
         </div>
     </section>
@@ -591,8 +606,8 @@
     <!-- Footer -->
     <footer>
         <p><strong>Gráfica Zaid</strong> — <span>Rua dos Cariocas, 982 - Itapevi - SP</span></p>
-        <p>Telefone / WhatsApp: <a href="tel:5511973722035" style="color: var(--gold-primary); text-decoration: none;">(11) 97372-2035</a> | E-mail: graficazaid@gmail.com</p>
-        <p style="margin-top: 10px; font-size: 12px; color: #737373;">Gráfica Zaid © 2026 | Todos os direitos reservados</p>
+        <p>Telefone / WhatsApp: <a href="tel:5511973722035" style="color: var(--pink-primary); text-decoration: none;">(11) 97372-2035</a> | E-mail: graficazaid@gmail.com</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #a395b0;">Gráfica Zaid © 2026 | Todos os direitos reservados</p>
         <div class="footer-dev">Desenvolvido por <a href="https://aeginatech.github.io" target="_blank">Aegina Tech</a></div>
     </footer>
 
