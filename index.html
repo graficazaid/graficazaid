@@ -421,9 +421,16 @@
             letter-spacing: 0.5px;
         }
 
-        .footer-dev span {
+        .footer-dev a {
             color: #fff;
             font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-dev a:hover {
+            color: var(--gold-primary);
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -586,7 +593,7 @@
         <p><strong>Gráfica Zaid</strong> — <span>Rua dos Cariocas, 982 - Itapevi - SP</span></p>
         <p>Telefone / WhatsApp: <a href="tel:5511973722035" style="color: var(--gold-primary); text-decoration: none;">(11) 97372-2035</a> | E-mail: graficazaid@gmail.com</p>
         <p style="margin-top: 10px; font-size: 12px; color: #737373;">Gráfica Zaid © 2026 | Todos os direitos reservados</p>
-        <div class="footer-dev">Desenvolvido por <span>Aegina Tech</span></div>
+        <div class="footer-dev">Desenvolvido por <a href="https://aeginatech.github.io" target="_blank">Aegina Tech</a></div>
     </footer>
 
 </body>
