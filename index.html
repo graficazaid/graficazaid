@@ -10,14 +10,16 @@
     
     <style>
         :root {
-            --bg-deep: #0b0b0b;
-            --surface-panel: #141414;
-            --surface-card: #1c1c1c;
-            --border-color: #2a2a2a;
+            --bg-deep: #0a0a0a;
+            --surface-card: #141414;
+            --surface-hover: #1f1f1f;
+            --border-color: #262626;
             --gold-primary: #dfb15b;
             --gold-hover: #f0c36d;
             --text-main: #ffffff;
-            --text-muted: #9e9e9e;
+            --text-muted: #a3a3a3;
+            --whatsapp-green: #25d366;
+            --call-blue: #3b82f6;
             --transition: all 0.3s ease;
         }
 
@@ -34,695 +36,561 @@
             color: var(--text-main);
             overflow-x: hidden;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* BARRA SUPERIOR */
-        .top-info-bar {
-            background: #050505;
+        /* Top Bar */
+        .top-bar {
+            background: #000;
             border-bottom: 1px solid var(--border-color);
-            padding: 10px 5%;
-            font-size: 0.82rem;
+            padding: 8px 5%;
+            font-size: 13px;
             color: var(--text-muted);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
 
-        .top-contacts {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .top-contacts a {
-            color: var(--text-muted);
+        .top-bar a {
+            color: var(--gold-primary);
             text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .top-contacts a:hover {
-            color: var(--gold-primary);
-        }
-
-        .top-location {
-            color: var(--gold-primary);
             font-weight: 500;
         }
 
-        /* HEADER PRINCIPAL */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(11, 11, 11, 0.98);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-        }
-
-        /* LOGOTIPO EXATO REPRODUZIDO VIA SVG/CSS */
-        .brand-logo-exact {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .brand-logo-exact svg {
-            height: 42px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-
-        .nav-link:hover {
-            color: var(--gold-primary);
-        }
-
-        .header-btn {
-            background: transparent;
-            color: var(--gold-primary);
-            border: 1px solid var(--gold-primary);
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .header-btn:hover {
-            background: var(--gold-primary);
-            color: #000;
-        }
-
-        /* CAPA HERO */
-        .hero-section {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            background: linear-gradient(90deg, rgba(11,11,11,0.95) 45%, rgba(11,11,11,0.5) 100%), url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero-content {
-            max-width: 650px;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gold-primary);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .hero-section h1 {
-            font-size: clamp(2.3rem, 4.2vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-section h1 span {
-            color: var(--gold-primary);
-        }
-
-        .hero-section p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-actions {
+        .top-bar .contact-links {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        .btn-primary-action {
+        /* Header / Navbar */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--gold-primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--gold-primary);
+        }
+
+        .btn-cta {
             background: var(--gold-primary);
             color: #000;
-            padding: 14px 28px;
+            padding: 10px 22px;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 0.85rem;
             text-decoration: none;
-            text-transform: uppercase;
             transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 13px;
         }
 
-        .btn-primary-action:hover {
-            background: #fff;
+        .btn-cta:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
         }
 
-        .btn-outline-action {
-            background: transparent;
+        /* Hero Section */
+        .hero {
+            padding: 90px 5%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #171717 100%);
+            border-bottom: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold-primary);
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--border-color);
             color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 14px 28px;
+            padding: 10px 22px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 0.85rem;
             text-decoration: none;
-            text-transform: uppercase;
             transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 13px;
         }
 
-        .btn-outline-action:hover {
+        .btn-outline:hover {
             border-color: var(--gold-primary);
             color: var(--gold-primary);
         }
 
-        /* BARRA DE DIFERENCIAIS */
-        .features-bar {
+        .btn-call {
+            border: 2px solid var(--call-blue);
+            color: #fff;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-call:hover {
+            background: var(--call-blue);
+            color: #fff;
+        }
+
+        /* Highlights Bar */
+        .highlights {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            background: var(--bg-deep);
-            border-bottom: 1px solid var(--border-color);
-            padding: 30px 5%;
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            padding: 40px 5%;
+            background: var(--surface-card);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        @media(max-width: 768px) {
-            .features-bar {
-                grid-template-columns: 1fr;
-            }
+        .highlight-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
         }
 
-        .feature-item h4 {
-            font-size: 0.95rem;
-            color: var(--gold-primary);
+        .highlight-item h3 {
+            font-size: 16px;
+            font-weight: 700;
             margin-bottom: 5px;
+            color: var(--text-main);
         }
 
-        .feature-item p {
-            font-size: 0.82rem;
+        .highlight-item p {
+            font-size: 13px;
             color: var(--text-muted);
         }
 
-        /* CARROSSEL DE CATEGORIAS */
-        .quick-categories {
-            background: var(--surface-panel);
-            border-bottom: 1px solid var(--border-color);
-            padding: 50px 5%;
-        }
-
-        .section-header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .section-header-flex h2 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .section-header-flex span {
+        .highlight-icon {
+            font-size: 24px;
             color: var(--gold-primary);
+            background: rgba(223, 177, 91, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* Products Grid */
+        .section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        .category-carousel {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding-bottom: 15px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--gold-primary) var(--surface-panel);
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 15px;
         }
 
-        .category-carousel::-webkit-scrollbar {
-            height: 6px;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .category-carousel::-webkit-scrollbar-thumb {
-            background: var(--gold-primary);
-            border-radius: 4px;
-        }
-
-        .cat-card {
-            min-width: 280px;
-            flex: 1;
+        .product-card {
             background: var(--surface-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 25px;
+            padding: 30px;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .cat-card:hover {
+        .product-card:hover {
             border-color: var(--gold-primary);
             transform: translateY(-5px);
+            background: var(--surface-hover);
         }
 
-        .cat-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+        .product-card h3 {
+            font-size: 20px;
             font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
         }
 
-        .cat-card p {
+        .product-card p {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 14px;
+            margin-bottom: 25px;
         }
 
-        .cat-link {
+        .product-link {
             color: var(--gold-primary);
             text-decoration: none;
-            font-size: 0.78rem;
             font-weight: 700;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
             gap: 5px;
         }
 
-        /* COLUNAS DE MATERIAIS / CATÁLOGO */
-        .container-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 90px 5%;
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        @media(max-width: 900px) {
-            .catalog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media(max-width: 600px) {
-            .catalog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .catalog-item {
-            background: var(--surface-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .catalog-item:hover {
-            border-color: var(--gold-primary);
-        }
-
-        .catalog-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .catalog-body {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .catalog-body h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .catalog-body p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .specs-list {
-            list-style: none;
-            margin-bottom: 20px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 12px;
-        }
-
-        .specs-list li {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .specs-list li::before {
-            content: "";
-            color: var(--gold-primary);
-        }
-
-        .btn-catalog-action {
-            background: transparent;
-            color: var(--gold-primary);
-            border: 1px solid var(--gold-primary);
-            text-align: center;
-            padding: 11px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .btn-catalog-action:hover {
-            background: var(--gold-primary);
-            color: #000;
-        }
-
-        /* SEÇÃO DE ORÇAMENTO */
+        /* Budget / Form Section */
         .budget-section {
-            background: var(--surface-panel);
+            background: var(--surface-card);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             padding: 80px 5%;
         }
 
-        .budget-box {
-            max-width: 550px;
+        .budget-container {
+            max-width: 700px;
             margin: 0 auto;
             background: var(--bg-deep);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 35px 30px;
+            padding: 40px;
+            border-radius: 12px;
         }
 
-        .budget-header {
-            text-align: center;
-            margin-bottom: 25px;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .budget-header h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .budget-header p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .form-row {
-            margin-bottom: 14px;
-        }
-
-        .form-row label {
+        .form-group label {
             display: block;
-            font-size: 0.75rem;
+            font-size: 13px;
             font-weight: 600;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
+            letter-spacing: 0.5px;
             color: var(--text-muted);
         }
 
-        .form-input {
+        .form-control {
             width: 100%;
-            padding: 11px 14px;
-            background: var(--surface-panel);
+            padding: 12px 15px;
+            background: var(--surface-card);
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 6px;
             color: var(--text-main);
-            font-size: 0.88rem;
-            transition: var(--transition);
+            font-size: 15px;
         }
 
-        .form-input:focus {
+        .form-control:focus {
             outline: none;
             border-color: var(--gold-primary);
         }
 
-        textarea.form-input {
+        textarea.form-control {
             resize: vertical;
-            min-height: 85px;
+            height: 120px;
         }
 
-        .submit-btn {
+        .btn-submit {
             width: 100%;
-            padding: 13px;
             background: var(--gold-primary);
             color: #000;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
             border: none;
-            border-radius: 4px;
+            padding: 14px;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 6px;
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 5px;
-            font-size: 0.82rem;
+            letter-spacing: 1px;
         }
 
-        .submit-btn:hover {
-            background: #fff;
+        .btn-submit:hover {
+            background: var(--gold-hover);
         }
 
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp-green);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
         footer {
             background: #050505;
-            padding: 35px 5%;
+            padding: 40px 5%;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.82rem;
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.8;
+        }
+
+        footer span {
+            color: var(--gold-primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 50px 5%;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            nav ul {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR -->
-    <div class="top-info-bar">
-        <div class="top-contacts">
-            <a href="tel:11973722035">(11) 97372-2035</a>
-            <span>|</span>
-            <a href="mailto:graficazaid@gmail.com">graficazaid@gmail.com</a>
-        </div>
-        <div class="top-location">
-            Atendimento Especializado em Itapevi e Região - SP
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div>📍 Rua dos Cariocas, 982 - Itapevi - SP</div>
+        <div class="contact-links">
+            <span>📞 <a href="tel:5511973722035">(11) 97372-2035 (Ligação)</a></span>
+            <span>💬 <a href="https://wa.me/5511973722035" target="_blank">WhatsApp</a></span>
+            <span>✉️ graficazaid@gmail.com</span>
         </div>
     </div>
 
-    <!-- HEADER COM O LOGOTIPO EXATO EM SVG -->
+    <!-- Header -->
     <header>
-        <a href="#" class="brand-logo-exact">
-            <svg viewBox="0 0 320 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Ícone / Símbolo do Logotipo Z -->
-                <rect x="0" y="5" width="50" height="50" rx="6" fill="#141414" stroke="#dfb15b" stroke-width="2"/>
-                <text x="13" y="39" font-family="'Montserrat', sans-serif" font-weight="900" font-size="32" fill="#dfb15b">Z</text>
-                
-                <!-- Nome Exato: GRÁFICA ZAID -->
-                <text x="65" y="37" font-family="'Montserrat', sans-serif" font-weight="900" font-size="22" letter-spacing="2" fill="#FFFFFF">GRÁFICA <tspan fill="#dfb15b">ZAID</tspan></text>
-            </svg>
+        <a href="#" class="logo-container">
+            <img src="logo.png" alt="Gráfica Zaid Logo">
+            <div class="logo-text">ZAID <span>GRÁFICA</span></div>
         </a>
-        <ul class="nav-menu">
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="#produtos" class="nav-link">Produtos</a></li>
-            <li><a href="#orcamento" class="nav-link">Orçamento</a></li>
-        </ul>
-        <div>
-            <a href="https://wa.me/5511973722035?text=Olá!%20Vim%20pelo%20site%20da%20Gráfica%20Zaid." target="_blank" class="header-btn">WhatsApp</a>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#orcamento">Orçamento</a></li>
+                <li><a href="tel:5511973722035" style="color: var(--call-blue);">Ligar</a></li>
+            </ul>
+        </nav>
+        <a href="#orcamento" class="btn-cta">Orçamento Rápido</a>
     </header>
 
-    <!-- CAPA HERO -->
-    <section class="hero-section">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-content">
-            <span class="hero-tag">Parceria Sólida e Soluções Inteligentes</span>
-            <h1>Tecnologia, Economia e Qualidade em <span>Impressos</span></h1>
-            <p>Minimizamos o seu trabalho na procura de fornecedores gráficos, oferecendo pontualidade e acabamento de alto nível para sua empresa em Itapevi.</p>
-            <div class="hero-actions">
-                <a href="#orcamento" class="btn-primary-action">Fazer Orçamento Online</a>
-                <a href="#produtos" class="btn-outline-action">Ver Nossos Produtos</a>
+            <h1>Parceria Sólida e Soluções <span>Inteligentes</span></h1>
+            <p>Tecnologia, Economia e Qualidade em Impressos. Atendimento especializado em nossa sede na Rua dos Cariocas, 982, oferecendo pontualidade e acabamento de alto nível para sua empresa em Itapevi.</p>
+            <div class="hero-buttons">
+                <a href="#orcamento" class="btn-cta">Fazer Orçamento Online</a>
+                <a href="tel:5511973722035" class="btn-call">📞 Ligar Agora</a>
+            </div>
+        </div>
+        <div style="background: var(--surface-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; text-align: center;">
+            <h3 style="color: var(--gold-primary); font-size: 22px; margin-bottom: 15px;">Fale Conosco</h3>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 10px;"><strong>Endereço:</strong> Rua dos Cariocas, 982 - Itapevi - SP</p>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Prefere conversar por ligação ou mensagem? Escolha abaixo:</p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:5511973722035" class="btn-call">Ligar (11) 97372-2035</a>
+                <a href="https://wa.me/5511973722035" target="_blank" class="btn-cta" style="background: var(--whatsapp-green); color: #fff;">WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- BARRA DE DIFERENCIAIS -->
-    <div class="features-bar">
-        <div class="feature-item">
-            <h4>Atendimento Ágil</h4>
-            <p>Respostas rápidas para sua demanda comercial.</p>
-        </div>
-        <div class="feature-item">
-            <h4>Acabamento de Ponta</h4>
-            <p>Qualidade rigorosa em verniz, cortes e laminação.</p>
-        </div>
-        <div class="feature-item">
-            <h4>Foco na Região</h4>
-            <p>Atendimento dedicado a empresas de Itapevi e arredores.</p>
-        </div>
-    </div>
-
-    <!-- CARROSSEL DE CATEGORIAS -->
-    <section class="quick-categories">
-        <div class="section-header-flex">
+    <!-- Highlights -->
+    <div class="highlights">
+        <div class="highlight-item">
+            <div class="highlight-icon">⚡</div>
             <div>
-                <span>Navegação Rápida</span>
-                <h2>Explore por Categoria</h2>
-            </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Arraste para o lado para ver mais opções</p>
-        </div>
-        
-        <div class="category-carousel">
-            <div class="cat-card">
-                <h3>Etiquetas & Rótulos</h3>
-                <p>Adesivos técnicos em bobinas ou folhas para comércio e indústria.</p>
-                <a href="#orcamento" class="cat-link">Cotar Categoria &rarr;</a>
-            </div>
-            <div class="cat-card">
-                <h3>Papelaria Corporativa</h3>
-                <p>Cartões de visita, papéis timbrados, pastas e envelopes institucionais.</p>
-                <a href="#orcamento" class="cat-link">Cotar Categoria &rarr;</a>
-            </div>
-            <div class="cat-card">
-                <h3>Comunicação Visual</h3>
-                <p>Banners, faixas, adesivos perfurados e sinalização externa.</p>
-                <a href="#orcamento" class="cat-link">Cotar Categoria &rarr;</a>
-            </div>
-            <div class="cat-card">
-                <h3>Acabamentos Nobres</h3>
-                <p>Verniz localizado, laminação fosca e cortes especiais personalizados.</p>
-                <a href="#orcamento" class="cat-link">Cotar Categoria &rarr;</a>
+                <h3>Atendimento Ágil</h3>
+                <p>Respostas rápidas para sua demanda comercial por telefone ou chat.</p>
             </div>
         </div>
-    </section>
-
-    <!-- COLUNAS DETALHADAS DE MATERIAIS -->
-    <div id="produtos" class="container-content">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <span style="color: var(--gold-primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">Soluções para sua Empresa</span>
-            <h2 style="font-size: 2.2rem; font-weight: 700; margin-top: 5px;">Principais Produtos Gráficos</h2>
+        <div class="highlight-item">
+            <div class="highlight-icon">✨</div>
+            <div>
+                <h3>Acabamento de Ponta</h3>
+                <p>Qualidade rigorosa em verniz localizado, cortes e laminação fosca.</p>
+            </div>
         </div>
-
-        <div class="catalog-grid">
-            <div class="catalog-item">
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Etiquetas" class="catalog-img">
-                <div class="catalog-body">
-                    <h3>Etiquetas e Adesivos</h3>
-                    <p>Rótulos técnicos e de alta aderência para embalagens, potes e produtos industriais ou comerciais.</p>
-                    <ul class="specs-list">
-                        <li>Papel Couché e BOPP Brilho/Fosco</li>
-                        <li>Adesivo acrílico de alta aderência</li>
-                        <li>Formatos personalizados sob medida</li>
-                    </ul>
-                    <a href="#orcamento" class="btn-catalog-action">Cotar Este Produto</a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80" alt="Off-Set" class="catalog-img">
-                <div class="catalog-body">
-                    <h3>Off-Set e Papelaria</h3>
-                    <p>Cartões de visita, folhas timbradas, blocos de notas, envelopes e pastas corporativas institucionais.</p>
-                    <ul class="specs-list">
-                        <li>Cartões com Verniz Total/Localizado</li>
-                        <li>Gramaturas encorpadas</li>
-                        <li>Blocos e talões numerados</li>
-                    </ul>
-                    <a href="#orcamento" class="btn-catalog-action">Cotar Este Produto</a>
-                </div>
-            </div>
-
-            <div class="catalog-item">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Digital" class="catalog-img">
-                <div class="catalog-body">
-                    <h3>Impressão Digital</h3>
-                    <p>Banners, faixas, adesivos perfurados e campanhas visuais rápidas para o seu ponto de venda.</p>
-                    <ul class="specs-list">
-                        <li>Lonas resistentes com bastão</li>
-                        <li>Adesivo perfurado para vidros</li>
-                        <li>Agilidade para pequenas tiragens</li>
-                    </ul>
-                    <a href="#orcamento" class="btn-catalog-action">Cotar Este Produto</a>
-                </div>
+        <div class="highlight-item">
+            <div class="highlight-icon">📍</div>
+            <div>
+                <h3>Localização Próxima</h3>
+                <p>Instalados na Rua dos Cariocas, 982, atendendo Itapevi e região.</p>
             </div>
         </div>
     </div>
 
-    <!-- SEÇÃO DE ORÇAMENTO ONLINE -->
-    <section id="orcamento" class="budget-section">
-        <div class="budget-box">
-            <div class="budget-header">
-                <h2>Orçamento Online</h2>
-                <p>Preencha os campos abaixo e entraremos em contato.</p>
+    <!-- Products Section -->
+    <section id="produtos" class="section">
+        <div class="section-title">
+            <h2>Principais Produtos Gráficos</h2>
+            <p>Soluções completas para destacar a sua marca no mercado</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div>
+                    <h3>Etiquetas & Rótulos</h3>
+                    <p>Adesivos técnicos em bobinas ou folhas para comércio, indústria e embalagens com alta aderência (Couché e BOPP).</p>
+                </div>
+                <a href="#orcamento" class="product-link">Cotar Categoria →</a>
             </div>
-            <form onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! Entraremos em contato em breve.');">
-                <div class="form-row">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" class="form-input" placeholder="Seu nome" required>
+            <div class="product-card">
+                <div>
+                    <h3>Papelaria Corporativa</h3>
+                    <p>Cartões de visita com verniz localizado, papéis timbrados, blocos numerados, pastas e envelopes institucionais.</p>
                 </div>
-                <div class="form-row">
-                    <label for="email">E-mail de Contato</label>
-                    <input type="email" id="email" class="form-input" placeholder="seu@email.com" required>
+                <a href="#orcamento" class="product-link">Cotar Categoria →</a>
+            </div>
+            <div class="product-card">
+                <div>
+                    <h3>Comunicação Visual</h3>
+                    <p>Banners, faixas, adesivos perfurados para vidros e campanhas visuais rápidas para o seu ponto de venda.</p>
                 </div>
-                <div class="form-row">
-                    <label for="telefone">Telefone / WhatsApp</label>
-                    <input type="tel" id="telefone" class="form-input" placeholder="(11) 90000-0000" required>
+                <a href="#orcamento" class="product-link">Cotar Categoria →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Form Section -->
+    <section id="orcamento" class="budget-section">
+        <div class="section-title">
+            <h2>Orçamento Online</h2>
+            <p>Preencha os campos abaixo e entraremos em contato rapidamente.</p>
+        </div>
+        <div class="budget-container">
+            <form action="https://wa.me/5511973722035" method="get" target="_blank">
+                <div class="form-group">
+                    <label>Nome Completo / Empresa</label>
+                    <input type="text" class="form-control" placeholder="Seu nome ou da sua empresa" required>
                 </div>
-                <div class="form-row">
-                    <label for="mensagem">Especificações do Material / Quantidades</label>
-                    <textarea id="mensagem" class="form-input" placeholder="Descreva o produto, tamanho e quantidade..." required></textarea>
+                <div class="form-group">
+                    <label>E-mail de Contato</label>
+                    <input type="email" class="form-control" placeholder="seu@email.com">
                 </div>
-                <button type="submit" class="submit-btn">Enviar Pedido de Orçamento</button>
+                <div class="form-group">
+                    <label>Telefone / WhatsApp para Contato</label>
+                    <input type="text" class="form-control" placeholder="(11) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label>Especificações do Material / Quantidades</label>
+                    <textarea class="form-control" placeholder="Ex: Preciso de 1.000 cartões de visita com verniz localizado..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
             </form>
         </div>
     </section>
 
-    <!-- RODAPÉ -->
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511973722035" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+    <!-- Footer -->
     <footer>
-        <p>Gráfica Zaid &copy; 2026 | Todos os direitos reservados | Atendimento em Itapevi e região - SP</p>
+        <p><strong>Gráfica Zaid</strong> — <span>Rua dos Cariocas, 982 - Itapevi - SP</span></p>
+        <p>Telefone / WhatsApp: <a href="tel:5511973722035" style="color: var(--gold-primary); text-decoration: none;">(11) 97372-2035</a> | E-mail: graficazaid@gmail.com</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #737373;">Gráfica Zaid © 2026 | Todos os direitos reservados</p>
     </footer>
 
 </body>
